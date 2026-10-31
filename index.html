@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre los paisajes, la cultura y las experiencias del Huila con Huila Explora.">
+  <meta name="theme-color" content="#FAF7F0">
+  <title>Huila Explora | Vive el destino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="./src/output.css" rel="stylesheet">
+  <script>
+    // Evita el destello del tema incorrecto al cargar la página.
+    try {
+      const savedTheme = localStorage.getItem("huila-theme");
+      if (savedTheme === "dark") document.documentElement.classList.add("dark");
+    } catch (_) {}
+  </script>
+</head>
+<body class="bg-cream text-ink antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50 border-b border-forest/10 bg-cream/95 backdrop-blur dark:border-white/10 dark:bg-slate-950/90">
+    <nav class="container-page flex min-h-18 items-center justify-between gap-4 py-3" aria-label="Navegación principal">
+      <a href="#inicio" class="flex items-center gap-2 rounded-lg focus-ring" aria-label="Huila Explora, ir al inicio">
+        <span class="grid size-10 place-items-center rounded-xl bg-forest text-xl text-white" aria-hidden="true">✦</span>
+        <span class="font-display text-lg font-extrabold tracking-tight text-forest dark:text-white">HUILA <span class="text-orange">EXPLORA</span></span>
+      </a>
+
+      <div id="nav-menu" inert class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-forest/10 bg-cream p-5 shadow-lg dark:border-white/10 dark:bg-slate-900 md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <a class="nav-link" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#destinos">Destinos</a>
+        <a class="nav-link" href="#nosotros">Nosotros</a>
+        <a class="nav-link" href="#faq">Preguntas</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+        <a class="rounded-full bg-forest px-5 py-2.5 text-center text-sm font-bold text-white transition hover:bg-forest-dark focus-ring" href="#destinos">Explorar ahora</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Activar modo oscuro" title="Cambiar tema">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <button id="menu-toggle" class="icon-button md:hidden" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+          <span aria-hidden="true" class="text-xl">☰</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="hero-wrap">
+      <div class="container-page grid min-h-[620px] items-center gap-12 py-16 md:grid-cols-2 md:py-24">
+        <div class="relative z-10">
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-forest/20 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-forest dark:border-white/20 dark:bg-slate-900/70 dark:text-emerald-300">
+            <span class="size-2 rounded-full bg-orange"></span> Tu próxima aventura comienza aquí
+          </p>
+          <h1 class="max-w-xl font-display text-5xl font-extrabold leading-[1.08] tracking-tight text-forest dark:text-white sm:text-6xl lg:text-7xl">
+            El Huila te espera. <span class="text-orange">¡Vamos a explorarlo!</span>
+          </h1>
+          <p class="mt-6 max-w-lg text-base leading-8 text-slate-700 dark:text-slate-300 sm:text-lg">
+            Paisajes que sorprenden, historias que inspiran y experiencias que se quedan contigo. Descubre el corazón del sur de Colombia.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#destinos" class="rounded-full bg-forest px-7 py-3.5 font-bold text-white shadow-lg shadow-forest/20 transition hover:-translate-y-1 hover:bg-forest-dark focus-ring">Explorar destinos <span aria-hidden="true">↗</span></a>
+            <a href="#nosotros" class="rounded-full border border-forest/25 px-7 py-3.5 font-bold text-forest transition hover:bg-forest/5 focus-ring dark:border-white/25 dark:text-white dark:hover:bg-white/10">Conócenos</a>
+          </div>
+          <div class="mt-12 flex items-center gap-5 border-t border-forest/15 pt-6 dark:border-white/15">
+            <div><p class="font-display text-2xl font-extrabold text-forest dark:text-white">3</p><p class="text-xs text-slate-600 dark:text-slate-400">Destinos destacados</p></div>
+            <span class="h-10 w-px bg-forest/20 dark:bg-white/20"></span>
+            <div><p class="font-display text-2xl font-extrabold text-forest dark:text-white">1</p><p class="text-xs text-slate-600 dark:text-slate-400">Gran destino: el Huila</p></div>
+          </div>
+        </div>
+        <div class="hero-image-frame">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Paisaje_del_Desierto_de_La_Tatacoa_en_el_Huila_Colombia.jpg" alt="Vista panorámica real del paisaje árido y las formaciones rojizas del Desierto de la Tatacoa, Huila" class="h-full w-full object-cover">
+          <div class="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/30 bg-white/90 p-4 shadow-xl backdrop-blur dark:bg-slate-900/90">
+            <p class="text-xs font-bold uppercase tracking-widest text-orange">Descubre lo extraordinario</p>
+            <p class="mt-1 font-display text-lg font-bold text-forest dark:text-white">Naturaleza, cultura y aventura</p>
+          </div>
+          <span class="hero-stamp" aria-hidden="true">HUILA<br>COLOMBIA</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinos" class="section-space">
+      <div class="container-page">
+        <div class="section-heading">
+          <p class="eyebrow">Lugares para recordar</p>
+          <h2 class="section-title">Explora nuestros <span class="text-orange">destinos</span></h2>
+          <p class="section-copy">Tres lugares fascinantes para empezar a descubrir la diversidad del departamento.</p>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="destination-card">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Desierto_de_La_Tatacoa.jpg" alt="Formaciones rocosas rojizas y cárcavas erosionadas del Desierto de la Tatacoa, cerca de Villavieja" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+              <span class="image-tag">Paisaje natural</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-orange">Villavieja, Huila</p>
+              <h3 class="mt-2 font-display text-2xl font-bold text-forest dark:text-white">Desierto de la Tatacoa</h3>
+              <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">Un paisaje sorprendente de tonos ocres y grises, ideal para contemplar el cielo y conectar con la naturaleza.</p>
+              <a href="#contacto" data-destination="Desierto de la Tatacoa" class="mt-5 inline-flex items-center gap-2 font-bold text-forest hover:text-orange focus-ring dark:text-emerald-300">Me interesa <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="destination-card">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/The_San_Agust%C3%ADn_Archaeological_Park_%284925664602%29.jpg" alt="Esculturas monumentales de piedra del Parque Arqueológico de San Agustín, Huila" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+              <span class="image-tag">Patrimonio cultural</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-orange">San Agustín, Huila</p>
+              <h3 class="mt-2 font-display text-2xl font-bold text-forest dark:text-white">San Agustín</h3>
+              <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">Un encuentro con la historia y el legado arqueológico de culturas ancestrales, rodeado de montañas y verde.</p>
+              <a href="#contacto" data-destination="San Agustín" class="mt-5 inline-flex items-center gap-2 font-bold text-forest hover:text-orange focus-ring dark:text-emerald-300">Me interesa <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="destination-card">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Parque_principal_-_1a_-_Villavieja.jpg" alt="Parque principal de Villavieja, Huila, con su espacio público y letras monumentales del municipio" class="h-full w-full object-cover transition duration-500 hover:scale-105">
+              <span class="image-tag">Tradición y naturaleza</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-orange">Norte del Huila</p>
+              <h3 class="mt-2 font-display text-2xl font-bold text-forest dark:text-white">Villavieja</h3>
+              <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">Un municipio lleno de encanto, tradición y una puerta de entrada a los paisajes únicos de la región.</p>
+              <a href="#contacto" data-destination="Villavieja" class="mt-5 inline-flex items-center gap-2 font-bold text-forest hover:text-orange focus-ring dark:text-emerald-300">Me interesa <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="bg-forest py-20 text-white">
+      <div class="container-page grid items-center gap-12 md:grid-cols-2">
+        <div class="overflow-hidden rounded-[2rem]">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/The_San_Agust%C3%ADn_Archaeological_Park_%284925664602%29.jpg" alt="Esculturas arqueológicas originales del Parque Arqueológico de San Agustín, en el departamento del Huila, Colombia" class="h-[360px] w-full object-cover">
+        </div>
+        <div>
+          <p class="eyebrow !text-orange-200">Nuestra esencia</p>
+          <h2 class="mt-3 font-display text-4xl font-extrabold leading-tight sm:text-5xl">Somos guías de nuevas <span class="text-orange-200">experiencias.</span></h2>
+          <p class="mt-6 leading-8 text-white/80">En Huila Explora queremos acercar a viajeros y familias a la riqueza natural y cultural del Huila. Promovemos el turismo responsable, el reconocimiento de nuestras tradiciones y el valor de cada destino.</p>
+          <p class="mt-4 leading-8 text-white/80">Nuestro propósito es ayudarte a descubrir lugares especiales y vivir cada recorrido con curiosidad, respeto y confianza.</p>
+          <a href="#contacto" class="mt-8 inline-flex rounded-full bg-cream px-6 py-3 font-bold text-forest transition hover:bg-white focus-ring">Hablemos de tu viaje</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-space bg-cream dark:bg-slate-950">
+      <div class="container-page">
+        <div class="section-heading">
+          <p class="eyebrow">Resolvemos tus dudas</p>
+          <h2 class="section-title">Preguntas <span class="text-orange">frecuentes</span></h2>
+          <p class="section-copy">Información útil para empezar a planear tu visita al Huila.</p>
+        </div>
+        <div class="mx-auto mt-10 grid max-w-3xl gap-4">
+          <article class="faq-item">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+                ¿Cuáles son los destinos destacados?
+                <span class="faq-symbol" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-1" class="faq-answer" hidden>
+              <p>La Tatacoa, San Agustín y Villavieja son tres excelentes lugares para comenzar a descubrir la diversidad del Huila.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+                ¿Cuál es la mejor época para visitar el Huila?
+                <span class="faq-symbol" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-2" class="faq-answer" hidden>
+              <p>Depende de tu itinerario y de las condiciones de cada destino. Consulta el clima local y las recomendaciones de viaje antes de salir.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+                ¿Cómo puedo solicitar información sobre un destino?
+                <span class="faq-symbol" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-3" class="faq-answer" hidden>
+              <p>Elige un destino en una de las tarjetas o en el formulario de contacto, completa tus datos y cuéntanos qué información necesitas.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="bg-sand py-20 dark:bg-slate-900">
+      <div class="container-page grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p class="eyebrow">Estamos para ayudarte</p>
+          <h2 class="section-title">¿Listo para <span class="text-orange">explorar?</span></h2>
+          <p class="section-copy">Cuéntanos qué destino te llama la atención. Déjanos tus datos y prepara el comienzo de tu aventura.</p>
+          <div class="mt-8 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <p class="flex items-center gap-3"><span class="contact-icon">⌖</span> Huila, Colombia</p>
+            <p class="flex items-center gap-3"><span class="contact-icon">@</span> contacto@huilaexplora.co</p>
+            <p class="flex items-center gap-3"><span class="contact-icon">◷</span> Atención: lunes a viernes</p>
+          </div>
+        </div>
+        <form id="contact-form" class="rounded-3xl bg-white p-6 shadow-xl shadow-forest/5 dark:bg-slate-800 sm:p-9" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="field-wrap">
+              <label for="name" class="field-label">Nombre completo</label>
+              <input id="name" name="name" type="text" autocomplete="name" class="field-input" placeholder="Tu nombre" required aria-describedby="name-error">
+              <p id="name-error" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field-wrap">
+              <label for="email" class="field-label">Correo electrónico</label>
+              <input id="email" name="email" type="email" autocomplete="email" class="field-input" placeholder="nombre@correo.com" required aria-describedby="email-error">
+              <p id="email-error" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field-wrap sm:col-span-2">
+              <label for="destination" class="field-label">Destino de interés</label>
+              <select id="destination" name="destination" class="field-input focus-ring" required aria-describedby="destination-error">
+                <option value="">Selecciona un destino</option>
+                <option value="Desierto de la Tatacoa">Desierto de la Tatacoa</option>
+                <option value="San Agustín">San Agustín</option>
+                <option value="Villavieja">Villavieja</option>
+                <option value="Quiero conocer varias opciones">Quiero conocer varias opciones</option>
+              </select>
+              <p id="destination-error" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field-wrap sm:col-span-2">
+              <label for="message" class="field-label">Mensaje</label>
+              <textarea id="message" name="message" rows="4" class="field-input resize-y" placeholder="Cuéntanos qué te gustaría saber..." required aria-describedby="message-error"></textarea>
+              <p id="message-error" class="field-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <button type="submit" class="mt-6 w-full rounded-full bg-orange px-7 py-3.5 font-bold text-white transition hover:bg-orange-dark focus-ring">Enviar solicitud <span aria-hidden="true">→</span></button>
+          <p id="form-status" class="mt-4 rounded-xl text-sm" role="status" aria-live="polite"></p>
+          <p class="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">Demo académica: el formulario valida los campos en el navegador, pero no transmite ni almacena los datos.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 py-10 text-white">
+    <div class="container-page">
+      <div class="flex flex-col justify-between gap-8 border-b border-white/15 pb-8 md:flex-row">
+        <div>
+          <a href="#inicio" class="font-display text-xl font-extrabold">HUILA <span class="text-orange">EXPLORA</span></a>
+          <p class="mt-3 max-w-sm text-sm leading-6 text-white/60">Descubre la riqueza natural y cultural del Huila. Tu próxima historia comienza aquí.</p>
+        </div>
+        <div>
+          <p class="font-bold">Síguenos</p>
+          <div class="mt-3 flex gap-4 text-sm text-white/70">
+            <a class="hover:text-orange focus-ring" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="hover:text-orange focus-ring" href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold">Contacto</p>
+          <a class="mt-3 inline-block text-sm text-white/70 hover:text-orange focus-ring" href="mailto:contacto@huilaexplora.co">contacto@huilaexplora.co</a>
+        </div>
+      </div>
+      <p class="pt-6 text-center text-xs text-white/50">© <span id="year"></span> Huila Explora. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./js/script.js" defer></script>
+</body>
+</html>

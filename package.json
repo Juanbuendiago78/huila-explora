@@ -1,0 +1,14 @@
+{
+  "name": "huila-explora",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio turístico Huila Explora con Tailwind CSS 4",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
