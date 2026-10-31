@@ -1,0 +1,211 @@
+
+@import "tailwindcss";
+
+/* ========================================
+   1. IDENTIDAD VISUAL HUILA EXPLORA
+======================================== */
+
+@theme {
+  --color-forest: #14532D;
+  --color-forest-dark: #0B3B20;
+  --color-cream: #FAF7F0;
+  --color-sand: #F1EBDD;
+  --color-orange: #C2410C;
+  --color-orange-dark: #9A3412;
+  --color-ink: #17231B;
+
+  --font-display: "Poppins", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* ========================================
+   2. CONFIGURACIÓN DEL MODO OSCURO
+======================================== */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ========================================
+   3. UTILIDAD PERSONALIZADA PARA EL FOCO
+======================================== */
+
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 4px;
+  }
+}
+
+/* ========================================
+   4. ESTILOS GENERALES
+======================================== */
+
+@layer base {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  a, button, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+/* ========================================
+   5. COMPONENTES PERSONALIZADOS
+======================================== */
+
+@layer components {
+
+  /* Contenedor principal */
+
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Espaciado de secciones */
+
+  .section-space {
+    @apply py-20 sm:py-24;
+  }
+
+  .section-heading {
+    @apply mx-auto max-w-2xl text-center;
+  }
+
+  /* Títulos */
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[.2em] text-orange;
+  }
+
+  .section-title {
+    @apply mt-3 font-display text-4xl font-extrabold leading-tight text-forest dark:text-white sm:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-4 max-w-xl leading-7 text-slate-600 dark:text-slate-300;
+  }
+
+  /* Navegación */
+
+  .nav-link {
+    @apply rounded-lg px-2 py-2 text-sm font-semibold text-slate-700 transition hover:text-orange dark:text-slate-200;
+  }
+
+  /* Botones de iconos */
+
+  .icon-button {
+    @apply grid size-10 place-items-center rounded-full border border-forest/20 text-forest transition hover:bg-forest/10 dark:border-white/20 dark:text-white dark:hover:bg-white/10;
+  }
+
+  /* Sección principal Hero */
+
+  .hero-wrap {
+    @apply relative overflow-hidden bg-gradient-to-br from-[#F7F1E4] via-cream to-[#E8EBDD] dark:from-slate-900 dark:via-slate-950 dark:to-emerald-950;
+  }
+
+  .hero-image-frame {
+    @apply relative min-h-[420px] overflow-hidden rounded-[2rem] shadow-2xl shadow-forest/20;
+  }
+
+  .hero-stamp {
+    @apply absolute right-5 top-5 grid size-20 rotate-6 place-items-center rounded-full border-2 border-white/80 bg-orange text-center text-[10px] font-extrabold leading-4 tracking-widest text-white shadow-lg;
+  }
+
+  .image-tag {
+    @apply absolute left-4 top-4 z-10 rounded-full border border-white/50 bg-white/85 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.18em] text-forest shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-emerald-200;
+  }
+
+  /* Tarjetas de destinos */
+
+  .destination-card {
+    @apply overflow-hidden rounded-3xl border border-forest/10 bg-white shadow-lg shadow-forest/5 transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-forest/15 hover:border-orange/40 dark:border-white/10 dark:bg-slate-900;
+  }
+
+  .destination-card img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .destination-card:hover img {
+    @apply scale-105;
+  }
+
+
+  /* Preguntas frecuentes */
+
+  .faq-item {
+    @apply overflow-hidden rounded-2xl border border-forest/15 bg-white dark:border-white/10 dark:bg-slate-900;
+  }
+
+  .faq-question {
+    @apply flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-forest dark:text-white;
+  }
+
+  .faq-answer {
+    @apply px-5 pb-5 leading-7 text-slate-600 dark:text-slate-300;
+  }
+
+  .faq-symbol {
+    @apply grid size-8 shrink-0 place-items-center rounded-full bg-forest/10 text-xl text-forest dark:bg-white/10 dark:text-white;
+  }
+
+  /* Formulario de contacto */
+
+  .field-wrap {
+    @apply min-w-0;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-bold text-slate-800 dark:text-slate-100;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-forest focus:ring-2 focus:ring-forest/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-emerald-400;
+  }
+
+  .field-input[aria-invalid="true"] {
+    @apply border-red-600 focus:border-red-600 focus:ring-red-600/20;
+  }
+
+  .field-error {
+    @apply mt-1 min-h-4 text-xs font-medium text-red-700 dark:text-red-300;
+  }
+
+  /* Información de contacto */
+
+  .contact-icon {
+    @apply grid size-9 place-items-center rounded-full bg-forest text-sm font-bold text-white;
+  }
+
+  /* Notificaciones */
+
+  .toast {
+    @apply pointer-events-none fixed bottom-5 left-1/2 z-[60] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 translate-y-5 rounded-2xl bg-forest px-5 py-4 text-center text-sm font-semibold text-white opacity-0 shadow-2xl transition duration-300;
+  }
+
+  .toast.show {
+    @apply translate-y-0 opacity-100;
+  }
+
+  /* Accesibilidad: saltar al contenido */
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-white px-4 py-3 font-bold text-forest shadow-lg focus:translate-y-0;
+  }
+}
+
+/* Animación visual de los botones */
+button:not(.faq-question):not(.icon-button) {
+  @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg active:scale-95;
+}
